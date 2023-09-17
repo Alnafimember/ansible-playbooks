@@ -1,6 +1,6 @@
 ---
-- name:
-  hosts: localhost
+- name: collecting host,ips and memory details form remote host
+  hosts: all
   tasks:
   - name: collecting hostname
     shell: "hostname |tr -d '\n' "

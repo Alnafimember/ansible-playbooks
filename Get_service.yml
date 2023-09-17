@@ -6,8 +6,8 @@
   - name:  copy script to remote host
     copy:
       src: /home/muhammad/ansible/ansible/
-      dest: /home/alnafi/ansible
+      dest: /home/user/ansible
       mode: 0775
-      owner: alnafi
-      group: alnafi
+      owner: user
+      group: user
 

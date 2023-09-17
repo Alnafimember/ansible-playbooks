@@ -5,16 +5,16 @@
   - name: Copying the python file
     copy:
       src: /home/muhammad/ansible/ansible/get_nginx_details.py
-      dest: /home/alnafi/ansible/
+      dest: /home/user/ansible/
   - name: Copying JSon file from host to remote
     copy:
       src: /home/muhammad/ansible/ansible/OS_DETAILS/osinfo.json
-      dest: /home/alnafi/ansible/
+      dest: /home/user/ansible/
 
   - name:  Copying csv file from host to remote host
     copy:
       src: /home/muhammad/ansible/ansible/OS_DETAILS/DAILY_REPORTS_2023-09-061435.csv
-      dest: /home/alnafi/ansible/
+      dest: /home/user/ansible/
       mode: 0755
       owner: alnafi
       group: alnafi
@@ -22,16 +22,16 @@
   - name: Copy a script from host to remote host
     copy:
       src: /home/muhammad/ansible/ansible/scripts/get_nginx_service_detail.sh    
-      dest: /home/alnafi/ansible
-      owner: alnafi
-      group: alnafi
+      dest: /home/user/ansible
+      owner: user
+      group: user
 
   - name: Excuting python script from remote endpoint
-    shell: /home/alnafi/ansible/get_nginx_service_details.sh
+    shell: /home/user/ansible/get_nginx_service_details.sh
 
 
   - name: Fetching details from Dailyreports.csv
     fetch:
-      src: /home/alnafi/ansible/DAILY_REPORTS_2023-09-061435.csv
+      src: /home/user/ansible/DAILY_REPORTS_2023-09-061435.csv
       dest: /home/muhammad/ansible/ansible/OS_DETAILS/ {{ inventory_hostname }}{{ ansible_datetime.minute }}.csv
       flat: yes     

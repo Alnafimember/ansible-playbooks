@@ -5,11 +5,11 @@
     - name: OS version
       copy: 
         src: /home/muhammad/ansible/ansible/get_system_version.sh
-        dest: /home/alnafi/ansible/
+        dest: /home/user/ansible/
         mode: '0775'
   
     - name: Running script to check OS version
-      shell: /home/alnafi/ansible/get_system_version.sh
+      shell: /home/user/ansible/get_system_version.sh
       register: command_output
    
     - debug:

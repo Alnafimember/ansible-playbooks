@@ -1,0 +1,13 @@
+---
+- name: Copying the script to remote host
+  hosts: all
+  gather_facts: no
+  tasks:
+  - name:  copy script to remote host
+    copy:
+      src: /home/muhammad/ansible/ansible/
+      dest: /home/alnafi/ansible
+      mode: 0775
+      owner: alnafi
+      group: alnafi
+

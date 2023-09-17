@@ -1,0 +1,15 @@
+---
+- name: installing apache on the remote host
+  hosts: all
+  become: yes  
+  gather_facts: true
+  tasks: 
+  - name: install apache
+    apt:
+      name: apache2
+      state: present
+  - name: install curl 
+    apt:
+      name: curl 
+      state: present
+

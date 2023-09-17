@@ -1,0 +1,8 @@
+---
+- name: fetch data from remote host
+  hosts: Host-webserver
+  tasks:
+  - fetch:
+      src: /home/alnafi/rafay.txt
+      copy: /home/muhammad/ansible/
+      flat: yes

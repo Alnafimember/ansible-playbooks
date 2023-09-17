@@ -1,0 +1,23 @@
+---
+- name:
+  hosts: localhost
+  tasks:
+  - name: collecting hostname
+    shell: "hostname |tr -d '\n' "
+    register: hostname_details
+  - debug:
+      var: hostname_details.stdout
+  
+  - name: Ip-address details
+    shell: "hostname -i |awk '{print $2}'"
+    regiter: ip_address
+  - debug:
+      var: ip_address.stdout
+  
+  - name: df-h details
+    shell: "df -h | grep -v 'tmpfs'"
+    register: df_details
+  - debug:
+      var: df_details.stdout
+
+

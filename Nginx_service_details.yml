@@ -1,0 +1,21 @@
+---
+- hosts: all
+  gather_facts: no
+  tasks:
+    - name: Copy the script and run it on remote host
+      copy:
+        src: /home/muhammad/ansible/ansible/get_nginx_service.sh
+        dest: /home/alnafi/ansible/
+        mode: '0755'
+        owner: alnafi
+        group: alnafi
+
+    - name: Running script on remote host
+      shell: /home/alnafi/ansible/get_nginx_service.sh
+      register: command_output
+
+    - debug:
+        var: command_output.stdout
+
+
+  

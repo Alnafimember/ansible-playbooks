@@ -1,0 +1,11 @@
+---
+- name: installing the wget command to download the packages
+  hosts: Host-webserver
+  tasks:
+  - name: wget
+    become: yes
+    apt:
+            name: wget
+            state: present
+
+

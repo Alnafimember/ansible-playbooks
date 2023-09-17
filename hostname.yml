@@ -1,0 +1,10 @@
+---
+- name: 'messaging through ansible too remote user'
+  hosts: Host-webserver
+  become: yes
+  tasks:
+  - debug:
+          msg: 
+          - "MY name is Muhammad rafay"
+          - "Ip of my remote host is {{ ansible_hostname }}"
+          - "IP of host is {{ inventory_hostname }}"

@@ -5,17 +5,14 @@
     - name: Copy the script and run it on remote host
       copy:
         src: /home/muhammad/ansible/ansible/get_nginx_service.sh
-        dest: /home/alnafi/ansible/
+        dest: /home/user/ansible/
         mode: '0755'
-        owner: alnafi
-        group: alnafi
+        owner: user
+        group: user
 
     - name: Running script on remote host
-      shell: /home/alnafi/ansible/get_nginx_service.sh
+      shell: /home/user/ansible/get_nginx_service.sh
       register: command_output
 
     - debug:
         var: command_output.stdout
-
-
-  

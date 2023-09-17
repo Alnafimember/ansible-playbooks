@@ -1,8 +1,8 @@
 ---
-- hosts: all
-  gather_facts: no
+- hosts: all  # all hosts you have added will be executed
+  gather_facts: no # by adding this your execution will take less time
   tasks:
-    - name: Copy the script and run it on remote host
+    - name: Copy the script and run it on remote host 
       copy:
         src: /home/muhammad/ansible/ansible/get_nginx_service.sh
         dest: /home/user/ansible/

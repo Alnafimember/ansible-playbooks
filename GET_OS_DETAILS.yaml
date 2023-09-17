@@ -34,4 +34,4 @@
     fetch:
       src: /home/user/ansible/DAILY_REPORTS_2023-09-061435.csv
       dest: /home/muhammad/ansible/ansible/OS_DETAILS/ {{ inventory_hostname }}{{ ansible_datetime.minute }}.csv
-      flat: yes     
+      flat: yes  

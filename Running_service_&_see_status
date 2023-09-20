@@ -1,0 +1,28 @@
+---
+- hosts: all
+  become: yes 
+  tasks: 
+  - name: Check <name> service restarting on Ubuntu 
+    service: 
+      name: <service_name>
+      state: started 
+    register: <name>_status
+    when: ansible_os_family == "Debian"
+
+  - name: Display the  <name> service status 
+    debug:
+      msg: "<name>  service is running"
+    when: (ansible_os_family == "Debian") and <name>_status.state == 'started'
+
+  - name: Check <name> service restarting on redhat
+    service:
+      name: <name>
+      state: started
+    register: <name>_status
+    when: ansible_os_family == "RedHat"
+
+  - name: Display the <name> service status
+    debug:
+      msg: "<name> service is running"
+    when: (ansible_os_family == "RedHat") and httpd_status.state == 'started'
+

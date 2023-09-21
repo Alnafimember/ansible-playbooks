@@ -1,10 +1,11 @@
+# In this yaml file we are going to get os version from our remote host machine
 ---
 - name: to see the version of remote host machine
   hosts: all
   tasks:
     - name: OS-version of my remote machine
       copy: 
-        src: /home/muhammad/ansible/ansible/get_system_version.sh
+        src: /home/muhammad/ansible/ansible/get_system_version.sh  # This file is provide in my repsitory
         dest: /home/user/ansible/
         mode: '0775'
   

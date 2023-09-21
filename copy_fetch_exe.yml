@@ -4,7 +4,7 @@
   tasks:
   - name: Copying the python file
     copy:
-      src: /home/muhammad/ansible/ansible/get_nginx_details.py
+      src: /home/muhammad/ansible/ansible/getnginx_details.py  # this file is provided in my repository
       dest: /home/user/ansible/
   - name: Copying JSon file from host to remote
     copy:
@@ -16,8 +16,8 @@
       src: /home/muhammad/ansible/ansible/OS_DETAILS/DAILY_REPORTS_2023-09-061435.csv
       dest: /home/user/ansible/
       mode: 0755
-      owner: alnafi
-      group: alnafi
+      owner: user
+      group: user
 
   - name: Copy a script from host to remote host
     copy:

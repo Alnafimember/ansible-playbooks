@@ -5,8 +5,8 @@
   tasks:
   - name:  copy script to remote host
     copy:
-      src: /home/muhammad/ansible/ansible/
-      dest: /home/user/ansible
+      src: /home/muhammad/ansible/ansible/ # Master machine location
+      dest: /home/user/ansible  # host machine location
       mode: 0775
       owner: user
       group: user

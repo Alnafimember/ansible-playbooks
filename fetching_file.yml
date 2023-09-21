@@ -1,0 +1,8 @@
+---
+- name: fetch data from remote host
+  hosts: Host-webserver
+  tasks:
+  - fetch:
+      src: /home/user/rafay.txt   # src is from host
+      copy: /home/muhammad/ansible/ # adding it to master machine
+      flat: yes
